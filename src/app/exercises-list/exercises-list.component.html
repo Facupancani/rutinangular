@@ -1,0 +1,25 @@
+<h1>Ejercicios</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Musculo</th>
+            <th>Series Efectivas</th>
+            <th>Repeticiones</th>
+            <th>Agregar a la rutina</th>
+        </tr>
+    </thead>
+    <tbody class="text-center">
+        <tr *ngFor= "let exercise of exercises">
+            <td>{{exercise.name}}</td>
+            <td>{{exercise.muscle}}</td>
+            <td>
+                <app-int-meter [(number)]="exercise.sets"></app-int-meter>
+            </td>
+            <td>
+                <app-int-meter [(number)]="exercise.reps"></app-int-meter>
+            </td>
+            <td><button (click)="addExercise(exercise)" [disabled]="exercise.sets==0||exercise.reps==0" class="btn btn-sm btn-success">Agregar</button></td>
+        </tr>
+    </tbody>
+</table>

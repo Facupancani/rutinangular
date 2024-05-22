@@ -1,0 +1,16 @@
+<table *ngIf="routineList[0]" class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Series</th>
+            <th>Repeticiones</th>
+            <th>Eliminar</th>
+        </tr>
+        <tr *ngFor="let exercise of routineList; let i = index">
+            <td>{{exercise.name}}</td>
+            <td>{{exercise.sets}}</td>
+            <td>{{exercise.reps}}</td>
+            <td><button (click)="removeExercise(i)" class="btn btn-danger btn-sm">x</button></td>
+        </tr>
+    </thead>
+</table>
