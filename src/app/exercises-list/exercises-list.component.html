@@ -10,7 +10,7 @@
         </tr>
     </thead>
     <tbody class="text-center">
-        <tr *ngFor= "let exercise of exercises">
+        <tr *ngFor= "let exercise of (exercises$ | async)">
             <td>{{exercise.name}}</td>
             <td>{{exercise.muscle}}</td>
             <td>
